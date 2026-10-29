@@ -1,0 +1,10 @@
+node_modules
+.next
+.git
+.env*
+work
+outputs
+*.tsbuildinfo
+supabase/.temp
+supabase/.branches
+sites

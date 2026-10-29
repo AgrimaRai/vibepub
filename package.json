@@ -1,0 +1,41 @@
+{
+  "name": "vibepub",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "node .next/standalone/server.js",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "qr": "node --import tsx scripts/qr.ts",
+    "deploy:check": "node --env-file-if-exists=.env.local scripts/check-deploy.mjs",
+    "postbuild": "node scripts/prepare-standalone.mjs",
+    "build:production": "npm run deploy:check && npm run build"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.76.0",
+    "jsqr": "^1.4.0",
+    "lucide-react": "^0.468.0",
+    "next": "^16.0.0",
+    "qrcode": "^1.5.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.3.0",
+    "@tailwindcss/postcss": "^4.1.0",
+    "@types/node": "^22.0.0",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tailwindcss": "^4.1.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.3"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
